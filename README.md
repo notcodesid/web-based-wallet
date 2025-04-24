@@ -1,12 +1,77 @@
-# React + Vite
+# Web-Based Solana Wallet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal web-based wallet built with React and Vite for generating Solana mnemonics and deriving public keys using BIP39 and Solana libraries. This project demonstrates how to create and manage Solana wallet addresses securely in the browser.
 
-Currently, two official plugins are available:
+## Features
+- Generate a new BIP39 mnemonic (seed phrase)
+- Derive Solana wallet public keys from the mnemonic using standard derivation paths
+- Add multiple wallets (public keys) from a single mnemonic
+- Simple and modern React UI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- [React](https://react.dev/) 19
+- [Vite](https://vitejs.dev/) 6
+- [@solana/web3.js](https://solana-labs.github.io/solana-web3.js/)
+- [bip39](https://github.com/bitcoinjs/bip39)
+- [ed25519-hd-key](https://github.com/paulmillr/ed25519-hd-key)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+- Node.js (v18 or higher recommended)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/notcodesid/web-based-wallet.git
+   cd web-based-wallet
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the App
+To start the development server:
+```bash
+npm run dev
+```
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build for Production
+```bash
+npm run build
+```
+
+### Lint the Code
+```bash
+npm run lint
+```
+
+## Usage
+1. Click **"create seed"** to generate a new BIP39 mnemonic (seed phrase).
+2. The generated seed will be displayed.
+3. Click **"add wallet"** to derive a new Solana public key from the mnemonic. Each click adds a new wallet (increments the derivation path index).
+4. The list of derived public keys and the current index are shown.
+
+## Project Structure
+```
+web-based-wallet/
+├── public/              # Static assets
+├── src/
+│   ├── App.jsx          # Main app component
+│   ├── solanaWallet.jsx # Wallet logic and UI
+│   ├── main.jsx         # React entry point
+│   ├── App.css, index.css # Styles
+│   └── assets/          # Images and other assets
+├── package.json         # Project metadata and scripts
+├── vite.config.js       # Vite configuration
+├── eslint.config.js     # ESLint configuration
+└── README.md            # Project documentation
+```
+
+## License
+This project is licensed under the MIT License.
+
+---
+Inspired by the Solana developer ecosystem.
